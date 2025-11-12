@@ -28,7 +28,7 @@ const Header = () => {
             <div className="container mx-auto px-6 h-20 flex items-center justify-between">
                 <Link to="/" aria-label="Home">
                     <img
-                        src="/think-logo-white-glow.png"
+                        src="/think-logo-glow.png"
                         alt="Think AI Logo"
                         className="h-9 md:h-10 w-auto"
                     />
