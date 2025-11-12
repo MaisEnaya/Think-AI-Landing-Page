@@ -44,26 +44,17 @@ const Home = () => (
             className="p-24 bg-grey"
         />
 
-        <CTAOpening
-        className={"p-24 max-w-720px"}
+        <CTAOpening className={"p-12 md:p-24 md:max-w-720px"}
         />
-        <AIFabric
-        className={"px-24"}
-        />
-        <AIFabricTagline
-        className={"px-24"}
-        />
+        <AIFabric />
+        <AIFabricTagline />
         <Products
-            className={"px-24"}
         />
         <ProductsDetails
-            className={"px-24"}
         />
         <OnlyWithThink
-            className={"px-24"}
         />
         <Vision
-            className={"px-24"}
         />
         <CTAClosing/>
         <Footer/>

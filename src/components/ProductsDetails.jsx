@@ -18,7 +18,7 @@ const ProductsDetails = () => {
   const products = [
     {
       name: 'AI SuperNode',
-      image: '/supernode.png',
+      image: '/supernode2.png',
       imageAlt: 'Think AI Supernode Hardware',
       features: [
         { icon: <Cpu className="w-6 h-6 text-blue" />, text: 'Up to 8 Petaflops of portable FP8 compute' },
@@ -73,7 +73,7 @@ const ProductsDetails = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-20"
         >
-          <div className="flex items-center justify-center gap-3 text-gray-400 font-light tracking-widest text-sm uppercase">
+          <div className="flex items-center justify-center gap-3 text-gray-400 font-light tracking-widest text-sm ">
             <img src={'/fabric_logo_glow.png'}  alt={'AI Fabric Logo'} className={"w-[106px]"}/>
             <span>AI Fabric Solutions Highlights</span>
           </div>

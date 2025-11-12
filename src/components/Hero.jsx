@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
-    // Use the local asset you already have in /public, or keep the CDN URL
+    //optmize/ reduce think loog image size. it takes a while to load on prod
     // const thinkGlowLogoUrl = 'https://horizons-cdn.hostinger.com/1eb91dc1-250a-47e7-886e-429ff43483e0/b72dc1ce59dabc0af186eb9e947c80a8.png';
     const thinkGlowLogoUrl = '/think-logo-glow.png';
 
