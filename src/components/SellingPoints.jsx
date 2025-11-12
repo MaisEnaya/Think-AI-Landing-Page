@@ -23,7 +23,7 @@ const SellingPoints = ({
                     {points.map((point, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 50, filter: 'brightness(0.5)' }}
+                            initial={{ opacity: 1, y: 10, filter: 'brightness(0.5)' }}
                             whileInView={{ opacity: 1, y: 0, filter: 'brightness(0.5)' }}
                             whileHover={{ filter: 'brightness(1)', scale: 1.05 }}
                             viewport={{ once: true, amount: 0.3 }}

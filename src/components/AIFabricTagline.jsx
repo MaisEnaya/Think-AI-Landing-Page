@@ -4,7 +4,7 @@ const centerLogoUrl = '/fabric_logo_glow.png';
 
 const AiFabricTagline = () => {
   return (
-    <section className="relative py-24 md:py-36 overflow-hidden">
+    <section className="relative pb-24 overflow-hidden">
             <div className="container mx-auto px-6 relative z-10">
         {/* 3-column layout on desktop, stacked on mobile */}
         <div className="grid grid-cols-1 justify-center lg:grid-cols-3 items-center">
