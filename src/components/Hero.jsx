@@ -36,8 +36,7 @@ const Hero = () => {
                     />
 
                     <h1 className="text-center font-light text-grey text-2xl md:text-4xl max-w-4xl">
-                        World’s first Unified AI Compute Ecosystem for <br className="hidden md:block" />
-                        Sovereign Intelligence
+                        The power of sovereign AI, unified
                     </h1>
                 </motion.div>
             </div>

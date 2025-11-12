@@ -37,7 +37,7 @@ const LeadershipCard = ({ member, index }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.2 }}
-    className="bg-[#1A1B2D]/50 rounded-3xl p-8 backdrop-blur-sm shadow-lg lg:aspect-square lg:min-h-[420px] xl:min-h-[480px]"
+    className="bg-[#1A1B2D]/50 rounded-3xl p-8 backdrop-blur-sm shadow-lg xl:min-h-[480px]"
   >
     <div className="flex flex-col md:flex-row gap-8 items-stretch min-h-full">
       {/* Left: identity + photo */}
@@ -100,7 +100,8 @@ function Leadership() {
         >
           <p className="text-xs md:text-sm text-gray-400 uppercase tracking-widest text-center mb-3">Leadership</p>
           <h1 className="text-4xl md:text-6xl font-bold text-white text-center mb-16">
-            Built by Innovators, Driven by Sovereignty
+            Built by Innovators, <br></br>
+              Driven by Sovereignty
           </h1>
         </motion.div>
 

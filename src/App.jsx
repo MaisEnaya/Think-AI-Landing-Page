@@ -77,6 +77,7 @@ const Contact = () => (
         <ContactHero />
         <Leadership/>
         <Connect/>
+        <Footer/>
     </main>
 );
 
