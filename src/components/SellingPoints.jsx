@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 /**
@@ -15,6 +15,8 @@ const SellingPoints = ({
                        }) => {
     if (!Array.isArray(points) || points.length === 0) return null;
 
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+
     return (
         <section className={className}>
             {/* NOTE: Tailwind's `container` is layout-only (not visible). If you want true edge-to-edge, remove it. */}
@@ -23,11 +25,22 @@ const SellingPoints = ({
                     {points.map((point, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 1, y: 10, filter: 'brightness(0.5)' }}
-                            whileInView={{ opacity: 1, y: 0, filter: 'brightness(0.5)' }}
-                            whileHover={{ filter: 'brightness(1)', scale: 1.05 }}
+                            initial={{ opacity: 1, y: 10, filter: 'brightness(1)' }}
+                            animate={{
+                                opacity: 1,
+                                y: 0,
+                                filter:
+                                    hoveredIndex === null
+                                        ? 'brightness(1)'
+                                        : hoveredIndex === index
+                                            ? 'brightness(1)'
+                                            : 'brightness(0.5)'
+                            }}
+                            whileHover={{ scale: 1.05 }}
+                            onHoverStart={() => setHoveredIndex(index)}
+                            onHoverEnd={() => setHoveredIndex(null)}
                             viewport={{ once: true, amount: 0.3 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            transition={{ duration: 0.3, delay: index * 0.05 }}
                             className="text-center p-0 transition-all duration-300 flex flex-col items-center"
                         >
                             <div className="flex justify-center items-center mb-6">
@@ -46,7 +59,7 @@ const SellingPoints = ({
                                 </h3>
                             </div>
 
-                            <p className="text-gray-400 max-w-xs mx-auto">{point.description}</p>
+                            <p className="text-gray-400 max-w-xs mx-auto whitespace-pre-line">{point.description}</p>
                         </motion.div>
                     ))}
                 </div>

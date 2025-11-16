@@ -1,22 +1,21 @@
 import React from 'react';
-import { Cpu, Cog, Share2 } from 'lucide-react';
 import SellingPoints from './SellingPoints.jsx';
 
 const fabricProductsData = [
   {
-    icon: <Cpu className="h-8 w-8 text-blue" />, // match existing accent color
+    icon: <img src="/AI_Node_logo.svg" alt="AI SuperNode" className="h-8 w-8" />,
     title: 'AI SuperNode',
-    description: 'The compute backbone to AI sovereignty',
+    description: 'The compute backbone to \n AI sovereignty',
   },
   {
-    icon: <Cog className="h-8 w-8 text-blue" />,
+    icon: <img src="/ilm_logo.svg" alt="AI SuperNode" className="h-8 w-8" />,
     title: 'ILM system',
     description: 'The Engine of AI Independence. Create and train any AI model.',
   },
   {
-    icon: <Share2 className="h-8 w-8 text-blue" />,
+    icon:<img src="/AI_Node_logo.svg" alt="AI SuperNode" className="h-8 w-8" />,
     title: 'Constellation',
-    description: 'Office by day, Supercompute cluster by night',
+    description: 'Office by day, Supercompute \n cluster by night',
   },
 ];
 

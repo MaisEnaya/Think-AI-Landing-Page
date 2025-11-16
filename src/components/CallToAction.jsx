@@ -12,7 +12,7 @@ const CTA = ({
                  // Keeping subtitle and button text identical for both variants per request
                  subtitle = 'Join the Sovereign AI Revolution. Connect with us to learn how Think AI can empower you.',
                  buttonLabel = 'Join the Sovereign AI Revolution',
-                 to = '/contact',
+                 to = '/contact#contact-top',
                  className = 'py-24 bg-grey text-white',
              }) => {
     const navigate = useNavigate();

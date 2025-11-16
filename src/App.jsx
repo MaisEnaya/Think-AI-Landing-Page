@@ -1,6 +1,7 @@
 // src/App.jsx
 import Header from './components/Header.jsx';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import Hero from './components/Hero.jsx';
 import SellingPoints from './components/SellingPoints.jsx';
 import { ShieldCheck, Cpu, MapPin } from 'lucide-react';
@@ -30,7 +31,7 @@ const mainSellingPoints = [
     {
         icon: <MapPin className="h-8 w-8 text-blue" />, // or text-blue-bright
         title: 'Built in KSA',
-        description: 'Proudly developed and engineered in the Kingdom of Saudi Arabia, driving local innovation.',
+        description: 'Proudly developed and engineered in the Kingdom of Saudi Arabia, driving  local innovation.',
     },
 ];
 
@@ -72,9 +73,37 @@ const Contact = () => (
     </main>
 );
 
+// Scroll manager: ensures hash navigation and route changes scroll correctly
+const ScrollManager = () => {
+    const location = useLocation();
+    useEffect(() => {
+        // If there's a hash, try to scroll to it. Otherwise scroll to top on route change.
+        const hash = location.hash;
+        if (hash) {
+            const id = hash.replace('#', '');
+            const scrollToEl = () => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    return true;
+                }
+                return false;
+            };
+            // Try now, and once on next frame in case the element isn't in the DOM yet
+            if (!scrollToEl()) {
+                requestAnimationFrame(scrollToEl);
+            }
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, [location.pathname, location.hash]);
+    return null;
+};
+
 export default function App() {
     return (
         <>
+            <ScrollManager />
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />

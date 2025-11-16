@@ -73,7 +73,7 @@ const ProductsDetails = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-20"
         >
-          <div className="flex items-center justify-center gap-3 text-gray-400 font-light tracking-widest text-sm ">
+          <div className="flex items-center justify-center gap-3 text-gray-400 font-light tracking-widest text-sm uppercase ">
             <img src={'/fabric_logo_glow.png'}  alt={'AI Fabric Logo'} className={"w-[106px]"}/>
             <span>AI Fabric Solutions Highlights</span>
           </div>
@@ -87,19 +87,26 @@ const ProductsDetails = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className={`rounded-2xl overflow-hidden aspect-video ${product.order === 'reversed' ? 'lg:order-last' : ''}`}
+                className={`relative rounded-sm overflow-hidden h-full min-h-[260px] md:min-h-[320px] lg:min-h-[420px] ${product.order === 'reversed' ? 'lg:order-last' : ''}`}
               >
                 {product.image.endsWith('.mp4') ? (
                   <video
                     src={product.image}
-                    className="w-full h-full object-cover"
+                    className="absolute inset-0 w-full h-full object-cover object-left-top"
                     autoPlay
                     muted
                     loop
                     playsInline
                   />
                 ) : (
-                  <img className="w-full h-full object-cover" alt={product.imageAlt} src={product.image} />
+                  <img
+                    className="absolute inset-0 w-full h-full object-cover"
+                    alt={product.imageAlt}
+                    src={product.image}
+                    loading="lazy"
+                    decoding="async"
+                    draggable={false}
+                  />
                 )}
               </motion.div>
 

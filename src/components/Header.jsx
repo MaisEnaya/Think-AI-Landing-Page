@@ -15,7 +15,7 @@ const Header = () => {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
-    const handleCTA = () => navigate('/contact');
+    const handleCTA = () => navigate('/contact#contact-top');
 
     return (
         <motion.header
@@ -30,7 +30,7 @@ const Header = () => {
                     <img
                         src="/think-logo-glow.png"
                         alt="Think AI Logo"
-                        className="h-9 md:h-10 w-auto"
+                        className="h-12 w-auto"
                     />
                 </Link>
 

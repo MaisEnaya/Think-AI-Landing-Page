@@ -7,7 +7,7 @@ const ContactHero = () => {
   const mailtoLink = `mailto:info@think-ai.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
   return (
-    <section className="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-black text-white">
+    <section id="contact-top" className="relative min-h-[75vh] flex items-center justify-center overflow-hidden bg-black text-white scroll-mt-24 md:scroll-mt-28">
       <div className="pt-24 container mx-auto px-6">
         <div className="max-w-4xl mx-auto text-center">
           {/* H1 styled like CTA heading */}

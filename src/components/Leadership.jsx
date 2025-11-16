@@ -4,11 +4,11 @@ import { ArrowRight } from 'lucide-react';
 
 const leadershipData = [
   {
-    role: 'Founder',
+    role: 'Founder and Chief Executive Officer',
     name: 'Ahmed AlSharif',
     email: 'ahmed@think-ai.com',
     imageUrl:
-      'https://horizons-cdn.hostinger.com/1eb91dc1-250a-47e7-886e-429ff43483e0/0a2df113d6bc02856579f5ae92d68e76.png',
+      '/ahmed.jpeg',
     background: [
       { title: 'Chief Technology Officer', company: 'Sandsoft' },
       { title: 'Head of Reality Labs Platform Engineering', company: 'Meta Inc.' },
@@ -17,11 +17,11 @@ const leadershipData = [
     linkedinUrl: 'https://www.linkedin.com/in/ahmed-a-sharif/',
   },
   {
-    role: 'Chief Operating Officer',
+    role: 'Co-Founder and Chief Operating Officer',
     name: 'Ammar Enaya',
     email: 'ammar.enaya@think-ai.com',
     imageUrl:
-      'https://horizons-cdn.hostinger.com/1eb91dc1-250a-47e7-886e-429ff43483e0/fdca8e66f3d1bcf89d5ee3c22f9fb287.png',
+      '/ammar.jpg',
     background: [
       { title: 'Chief Executive Officer', company: 'Ajlan Tech' },
       { title: 'Regional Director, Middle East and Turkey', company: 'Vectra AI' },
@@ -37,32 +37,35 @@ const LeadershipCard = ({ member, index }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: index * 0.2 }}
-    className="bg-[#1A1B2D]/50 rounded-3xl p-8 backdrop-blur-sm shadow-lg xl:min-h-[480px]"
+    className="bg-black rounded-xl p-8 backdrop-blur-sm shadow-lg xl:min-h-[480px]"
   >
-    <div className="flex flex-col md:flex-row gap-8 items-stretch min-h-full">
-      {/* Left: identity + photo */}
-      <div className="flex-shrink-0 flex flex-col justify-between">
-        <div>
-          <p className="text-sm text-gray-400 uppercase tracking-widest">{member.role}</p>
+      <p className="text-sm text-gray-400 uppercase tracking-widest">{member.role}</p>
+      <div>
           <p className="text-2xl font-bold text-white mt-1">{member.name}</p>
           <a
-            href={`mailto:${member.email}`}
-            className="text-blue/80 hover:text-blue transition-colors"
+              href={`mailto:${member.email}`}
+              className="text-blue/80 hover:text-blue transition-colors"
           >
-            {member.email}
+              {member.email}
           </a>
-        </div>
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-8 items-stretch min-h-full">
+
+      {/* Left: identity + photo */}
+      <div className="flex-shrink-0 flex flex-col justify-between">
+
         <img
           src={member.imageUrl}
           alt={member.name}
-          className="rounded-2xl mt-4 w-full md:w-48 object-cover"
+          className="rounded-xl mt-6 w-full md:w-48 object-cover"
           draggable={false}
         />
       </div>
 
       {/* Right: background + LinkedIn */}
       <div className="flex-grow">
-        <div className="relative bg-black/30 rounded-2xl p-6 h-full">
+        <div className="relative  rounded-xl p-6">
           <p className="text-sm text-gray-400 uppercase tracking-widest mb-4">Background</p>
           <ul className="space-y-3">
             {member.background.map((item, i) => (
@@ -72,17 +75,18 @@ const LeadershipCard = ({ member, index }) => (
               </li>
             ))}
           </ul>
-          <a
-            href={member.linkedinUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="static sm:absolute bottom-6 right-6 flex items-center text-blue hover:text-white font-semibold group transition-colors mt-8"
-            aria-label={`Open ${member.name}'s LinkedIn profile`}
-          >
-            LinkedIn
-            <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
-          </a>
+
         </div>
+          <a
+              href={member.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-left static sm:absolute bottom-6 right-6 flex items-center text-blue hover:text-white font-semibold group transition-colors mt-8"
+              aria-label={`Open ${member.name}'s LinkedIn profile`}
+          >
+              LinkedIn
+              <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />
+          </a>
       </div>
     </div>
   </motion.div>
